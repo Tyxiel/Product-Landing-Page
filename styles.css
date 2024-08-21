@@ -26,12 +26,33 @@ body {
   background: linear-gradient(#ced4da, #dee2e6, #e9ecef);
 }
 
+#nav-bar #cart-link {
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid #212529;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
 #nav-bar a {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #212529;
   font-size: 1.8rem;
+}
+
+#nav-bar i {
+  font-size: 3rem;
+}
+
+#nav-bar p {
+  margin: 0;
+  text-align: center;
+}
+
+#header-img {
+  object-fit: contain;
+  width: 6rem;
 }
 
 #logo-link {
@@ -44,26 +65,6 @@ body {
   justify-content: center;
 }
 
-#nav-bar #cart-link {
-  padding: 0.5rem 1rem;
-  border: 0.2rem solid #212529;
-  border-radius: 0.6rem;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-#nav-bar i.bxs-watch-alt {
-  font-size: 4rem;
-}
-
-#nav-bar i {
-  font-size: 3rem;
-}
-
-#nav-bar p {
-  margin: 0;
-  text-align: center;
-}
-
 .link-wrapper {
   display: flex;
   align-items: center;
@@ -71,10 +72,9 @@ body {
 }
 
 #main-title {
-  margin: 2rem auto;
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   color: #495057;
 }
 
@@ -85,13 +85,12 @@ section header {
   flex-direction: column;
 }
 
-#header-img {
-  object-fit: cover;
+#video {
   width: 50%;
-  margin-left: calc(25vw - 20px);
-  margin-bottom: 12px;
+  margin-left: calc(25vw - 25px);
+  margin-bottom: 16px;
   border-radius: 0.6rem;
-  box-shadow: 20px 12px #343A40;
+  box-shadow: 25px 16px #343A40;
 }
 
 section header a {
@@ -166,4 +165,40 @@ footer .footer-link {
 
 footer .footer-link:hover {
   color: #212529;
+}
+
+@media only screen and (max-width: 732px) {
+  #nav-bar #cart-link {
+    padding: 0.25rem 0.5rem;
+    border: 0.1rem solid #212529;
+    border-radius: 0.6rem;
+  } 
+
+  #header-img {
+    object-fit: contain;
+    width: 3rem;
+  }
+
+  #logo-link {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  #nav-bar a {
+    font-size: 0.9rem;
+  }
+
+  #nav-bar i {
+    font-size: 1.5rem;
+  } 
+
+  .link-wrapper {
+    gap: 1rem;
+  }
+  
+  #main-title {
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }
