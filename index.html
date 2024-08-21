@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Droid Watches</title>
+    <meta
+      name="description"
+      content="Modern technology on your every day life"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://img.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_107791-29294.jpg"
+    />
+    <link
+      rel="canonical"
+      href="https://www.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_237823191.htm"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all links
+        const navLinks = document.querySelectorAll("#nav-bar .nav-link");
+
+        // Active to visible section
+        function updateActiveLink() {
+          let index = 0;
+          const sections = document.querySelectorAll("main section");
+          sections.forEach((section, i) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+              index = i;
+            }
+          });
+          navLinks.forEach((link) => link.classList.remove("active"));
+          navLinks[index].classList.add("active");
+        }
+
+        // Page roll
+        window.addEventListener("scroll", updateActiveLink);
+
+        // Hover event
+        navLinks.forEach((link) => {
+          const icon = link.querySelector("i");
+
+          link.addEventListener("mouseenter", () => {
+            if (icon.classList.contains("bx-food-menu")) {
+              icon.classList.replace("bx-food-menu", "bxs-food-menu");
+            } else if (icon.classList.contains("bxs-cart")) {
+              icon.classList.replace("bxs-cart", "bxs-cart-add");
+            }
+          });
+
+          link.addEventListener("mouseleave", () => {
+            if (icon.classList.contains("bxs-food-menu")) {
+              icon.classList.replace("bxs-food-menu", "bx-food-menu");
+            } else if (icon.classList.contains("bxs-cart-add")) {
+              icon.classList.replace("bxs-cart-add", "bxs-cart");
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <a id="logo-link" class="nav-link" href="#">
+          <i class="bx bxs-watch-alt"></i>
+          <p>Droid<br />Watches</p>
+        </a>
+        <span class="link-wrapper">
+          <a id="features-link" class="nav-link" href="#">
+            <i class="bx bx-food-menu"></i>
+            <p>Features</p>
+          </a>
+          <a id="cart-link" class="nav-link" href="#">
+            <i class="bx bxs-cart"></i>
+            <p>Order Now</p>
+          </a>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <header>
+          <h1 id="main-title">New Era. New Technologies</h1>
+          <img
+            id="header-img"
+            src="https://img.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_107791-29294.jpg"
+            alt="Smart watch"
+          />
+          <a
+            id="image-credits"
+            href="https://www.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_237823191.html"
+            target="_blank"
+            >Image by upklyak on Freepik</a
+          >
+          <!-- The link is correct! Heres the link as well (copy and paste on your browser of choice): 
+
+           https://www.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_237823191.htm
+
+           -->
+        </header>
+        <div id="features">
+          <div class="feature-vital">
+            <i class="bx bx-stats"></i>
+            <div class="text-wrapper">
+              <h3>Smart Vital Track</h3>
+              <h4>Track your vitals precisely with no effort</h4>
+              <p>
+                Sleep cycles, BPM, glucose, fat, even heart attack detection!
+              </p>
+            </div>
+          </div>
+          <div class="feature-use">
+            <i class="bx bxs-hand-up"></i>
+            <div class="text-wrapper">
+              <h3>Easy Use</h3>
+              <h4>Easily understandable interface</h4>
+              <p>
+                Most of accessibility is built-in with settings to adjust to
+                your need.
+              </p>
+            </div>
+          </div>
+          <div class="feature-delivery">
+            <i class="bx bx-package"></i>
+            <div class="text-wrapper">
+              <h3>Fast Delivery</h3>
+              <h4>Delivery even in weekends*</h4>
+              <p>30% faster than competition!*</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-link" href="terms.html">Terms of Use</a>
+      <a class="footer-link" href="privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>
