@@ -223,6 +223,7 @@ footer .footer-link:hover {
 @media only screen and (max-width: 600px) {
   #nav-bar {
     flex-wrap: wrap;
+    padding: 0.5rem 1rem;
   }
 
   #nav-bar #cart-link {
