@@ -33,23 +33,49 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll("#nav-bar .nav-link");
+        const sections = document.querySelectorAll("main section");
 
         function updateActiveLink() {
           let index = 0;
-          const sections = document.querySelectorAll("main section");
+          const fromTop = window.scrollY + 50;
+
           sections.forEach((section, i) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+            if (
+              section.offsetTop <= fromTop &&
+              section.offsetTop + section.offsetHeight > fromTop
+            ) {
               index = i;
             }
           });
+
           navLinks.forEach((link) => link.classList.remove("active"));
           navLinks[index].classList.add("active");
         }
 
+        updateActiveLink();
+
         window.addEventListener("scroll", updateActiveLink);
 
         navLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              const offset = 100; 
+              const targetPosition =
+                targetElement.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+
           const icon = link.querySelector("i");
 
           link.addEventListener("mouseenter", () => {
@@ -157,7 +183,9 @@
         />
         <input id="submit" type="submit" />
       </form>
-      <p class="form-description">We won't send you newsletters, just your booking.</p>
+      <p class="form-description">
+        We won't send you newsletters, just your booking.
+      </p>
     </main>
 
     <footer>
