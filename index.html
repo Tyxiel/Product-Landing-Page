@@ -32,27 +32,30 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Select all links
         const navLinks = document.querySelectorAll("#nav-bar .nav-link");
+        const sections = document.querySelectorAll("main section");
 
-        // Active to visible section
         function updateActiveLink() {
           let index = 0;
-          const sections = document.querySelectorAll("main section");
+          const fromTop = window.scrollY + 50;
+
           sections.forEach((section, i) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+            if (
+              section.offsetTop <= fromTop &&
+              section.offsetTop + section.offsetHeight > fromTop
+            ) {
               index = i;
             }
           });
+
           navLinks.forEach((link) => link.classList.remove("active"));
           navLinks[index].classList.add("active");
         }
 
-        // Page roll
+        updateActiveLink();
+
         window.addEventListener("scroll", updateActiveLink);
 
-        // Hover event
         navLinks.forEach((link) => {
           const icon = link.querySelector("i");
 
@@ -161,7 +164,9 @@
         />
         <input id="submit" type="submit" />
       </form>
-      <p class="form-description">We won't send you newsletters, just your booking.</p>
+      <p class="form-description">
+        We won't send you newsletters, just your booking.
+      </p>
     </main>
 
     <footer>
