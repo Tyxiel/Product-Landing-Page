@@ -12,6 +12,7 @@ html {
   font-size: 62.5%;
   font-family: "Goudy Bookletter 1911", sans-serif;
   background-color: #e9ecef;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -114,7 +115,7 @@ section header a {
   background-color: #ececec;
   border-radius: 0.8rem;
   margin: 2rem auto;
-  width: 80%;
+  width: 75%;
   max-width: 80rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   display: flex;
@@ -214,7 +215,7 @@ form #submit {
 
 .form-description {
   text-align: center;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 100px 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -260,7 +261,6 @@ form #submit {
     padding: 1%;
     border-radius: 0.8rem;
     margin: 2rem auto;
-    width: 75%;
     max-width: 80rem;
     gap: 1rem;
   }
