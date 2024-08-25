@@ -156,31 +156,10 @@ section header a {
   color: #6c757d;
 }
 
-footer {
-  width: 100%;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  background-color: #ced4da;
-  text-align: center;
-  font-size: 1.4rem;
-  color: #495057;
-}
-
-footer .footer-link {
-  color: #495057;
-  text-decoration: none;
-  margin: 0 1rem;
-  transition: color 0.3s;
-}
-
-footer .footer-link:hover {
-  color: #212529;
-}
-
 .form-title {
   font-size: 2.4rem;
   text-align: center;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 15px 0;
 }
 
 form {
@@ -214,8 +193,30 @@ form #submit {
 }
 
 .form-description {
+  font-size: 1.2rem;
   text-align: center;
   margin: 5px 0 100px 0;
+}
+
+footer {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background-color: #ced4da;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #495057;
+}
+
+footer .footer-link {
+  color: #495057;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s;
+}
+
+footer .footer-link:hover {
+  color: #212529;
 }
 
 @media only screen and (max-width: 600px) {
@@ -257,6 +258,12 @@ form #submit {
     margin-bottom: 1rem;
   }
 
+  #video {
+    margin-left: calc(25vw - 12.5px);
+    margin-bottom: 8px;
+    box-shadow: 12.5px 8px #343A40;
+  }
+
   #features {
     padding: 1%;
     border-radius: 0.8rem;
@@ -283,5 +290,25 @@ form #submit {
   #features div .text-wrapper p {
     font-size: 0.8rem;
     color: #6c757d;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  form #email {
+    width: 30%;
+    min-height: 15px;
+    margin-right: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  form #submit {
+    font-size: 1rem;
+  }
+  
+  .form-description {
+    font-size: 0.8rem;
+    margin: 5px 0 50px 0;
   }
 }
