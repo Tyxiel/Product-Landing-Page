@@ -33,26 +33,19 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll("#nav-bar .nav-link");
-        const sections = document.querySelectorAll("main section");
 
         function updateActiveLink() {
           let index = 0;
-          const fromTop = window.scrollY + 50;
-
+          const sections = document.querySelectorAll("main section");
           sections.forEach((section, i) => {
-            if (
-              section.offsetTop <= fromTop &&
-              section.offsetTop + section.offsetHeight > fromTop
-            ) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
               index = i;
             }
           });
-
           navLinks.forEach((link) => link.classList.remove("active"));
           navLinks[index].classList.add("active");
         }
-
-        updateActiveLink();
 
         window.addEventListener("scroll", updateActiveLink);
 
@@ -164,9 +157,7 @@
         />
         <input id="submit" type="submit" />
       </form>
-      <p class="form-description">
-        We won't send you newsletters, just your booking.
-      </p>
+      <p class="form-description">We won't send you newsletters, just your booking.</p>
     </main>
 
     <footer>
