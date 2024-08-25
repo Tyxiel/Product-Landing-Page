@@ -70,7 +70,8 @@ header {
   gap: 1rem;
 }
 
-#cart-link, #features-link{
+#cart-link,
+#features-link {
   flex-direction: column;
   justify-content: center;
 }
@@ -100,7 +101,7 @@ section header {
   margin-left: calc(25vw - 25px);
   margin-bottom: 16px;
   border-radius: 0.8rem;
-  box-shadow: 25px 16px #343A40;
+  box-shadow: 25px 16px #343a40;
 }
 
 section header a {
@@ -228,7 +229,7 @@ footer .footer-link:hover {
     padding: 0.25rem 0.5rem;
     border: 0.1rem solid #212529;
     border-radius: 0.6rem;
-  } 
+  }
 
   #header-img {
     object-fit: contain;
@@ -246,12 +247,12 @@ footer .footer-link:hover {
 
   #nav-bar i {
     font-size: 1.5rem;
-  } 
+  }
 
   .link-wrapper {
     gap: 1rem;
   }
-  
+
   #main-title {
     margin: 6rem auto 0 auto;
     font-size: 1.5rem;
@@ -261,7 +262,7 @@ footer .footer-link:hover {
   #video {
     margin-left: calc(25vw - 12.5px);
     margin-bottom: 8px;
-    box-shadow: 12.5px 8px #343A40;
+    box-shadow: 12.5px 8px #343a40;
   }
 
   #features {
@@ -281,12 +282,12 @@ footer .footer-link:hover {
     font-size: 1.6rem;
     color: #343a40;
   }
-  
+
   #features div .text-wrapper h4 {
     font-size: 1.2rem;
     color: #495057;
   }
-  
+
   #features div .text-wrapper p {
     font-size: 0.8rem;
     color: #6c757d;
@@ -302,11 +303,11 @@ footer .footer-link:hover {
     margin-right: 0.25rem;
     font-size: 1rem;
   }
-  
+
   form #submit {
     font-size: 1rem;
   }
-  
+
   .form-description {
     font-size: 0.8rem;
     margin: 5px 0 50px 0;
@@ -314,5 +315,5 @@ footer .footer-link:hover {
 
   footer {
     font-size: 1rem;
-  }  
+  }
 }
