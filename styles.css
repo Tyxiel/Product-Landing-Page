@@ -26,8 +26,8 @@ header {
 #nav-bar {
   position: fixed;
   top: 0;
-  min-height: 50px;
-  width: 90%;
+  min-height: 30px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +38,7 @@ header {
 #nav-bar #cart-link {
   padding: 0.5rem 1rem;
   border: 0.2rem solid #212529;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -83,7 +83,7 @@ header {
 #main-title {
   text-align: center;
   font-size: 3rem;
-  margin: 90px auto 2rem auto;
+  margin: 100px auto 2rem auto;
   color: #495057;
 }
 
@@ -98,7 +98,7 @@ section header {
   width: 50%;
   margin-left: calc(25vw - 25px);
   margin-bottom: 16px;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   box-shadow: 25px 16px #343A40;
 }
 
@@ -176,6 +176,47 @@ footer .footer-link:hover {
   color: #212529;
 }
 
+.form-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form #email {
+  width: 30%;
+  min-height: 30px;
+  padding: 5px 10px;
+  border-top-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  border: 2px solid #212529;
+  background-color: #ced4da;
+}
+
+form #email::placeholder {
+  color: #212529;
+}
+
+form #submit {
+  padding: 5px 10px;
+  border-top-right-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  font-size: 2rem;
+  border: 2px solid #212529;
+  background-color: lightcoral;
+}
+
+.form-description {
+  text-align: center;
+  margin: 5px 0 10px 0;
+}
+
 @media only screen and (max-width: 600px) {
   #nav-bar {
     flex-wrap: wrap;
@@ -210,8 +251,37 @@ footer .footer-link:hover {
   }
   
   #main-title {
-    margin: 1rem auto;
+    margin: 6rem auto 0 auto;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  #features {
+    padding: 1%;
+    border-radius: 0.8rem;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 80rem;
+    gap: 1rem;
+  }
+
+  #features div i {
+    font-size: 4rem;
+    place-content: center;
+  }
+
+  #features div .text-wrapper h3 {
+    font-size: 1.6rem;
+    color: #343a40;
+  }
+  
+  #features div .text-wrapper h4 {
+    font-size: 1.2rem;
+    color: #495057;
+  }
+  
+  #features div .text-wrapper p {
+    font-size: 0.8rem;
+    color: #6c757d;
   }
 }
