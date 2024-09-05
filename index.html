@@ -1,196 +1,229 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>My Portfolio</title>
+    <link rel="preload" href="style.css" as="style" />
+    
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
     />
-    <title>Droid Watches</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://avatars.githubusercontent.com/u/128870773?v=4"
+    />
     <meta
       name="description"
-      content="Modern technology on your every day life"
+      content="A portfolio for a freeCodeCamp project."
     />
-    <link href="styles.css" rel="stylesheet" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="preload"
-      as="image"
-      href="https://cdn.pixabay.com/photo/2022/01/03/21/54/smart-watch-6913690_1280.png"
-    />
-    <link
-      rel="preload"
-      as="video"
-      href="https://assets.mixkit.co/videos/47881/47881-720.mp4"
-    />
-    <link
-      rel="canonical"
-      href="https://mixkit.co/free-stock-video/young-fit-man-checking-his-smart-watch-as-he-runs-47881/"
-    />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll("#nav-bar .nav-link");
-        const sections = document.querySelectorAll("main section");
+        const icon = document.getElementById("dropdown-icon");
+        const menu = document.getElementById("dropdown-menu");
+        const container = document.querySelector(".dropdown-container");
 
-        function updateActiveLink() {
-          let index = 0;
-          const fromTop = window.scrollY + 50;
+        icon.addEventListener("click", function (event) {
+          event.stopPropagation();
+          if (container.classList.contains("open")) {
+            container.classList.remove("open");
+          } else {
+            container.classList.add("open");
+          }
+        });
 
-          sections.forEach((section, i) => {
-            if (
-              section.offsetTop <= fromTop &&
-              section.offsetTop + section.offsetHeight > fromTop
-            ) {
-              index = i;
-            }
-          });
+        document.addEventListener("click", function (event) {
+          if (!container.contains(event.target)) {
+            container.classList.remove("open");
+          }
+        });
 
-          navLinks.forEach((link) => link.classList.remove("active"));
-          navLinks[index].classList.add("active");
-        }
+        const i = link.querySelector("i");
 
-        updateActiveLink();
+        link.addEventListener("mouseenter", () => {
+          if (i.classList.contains("bxs-folder")){
+            i.classList.replace("bxs-folder", "bxs-folder-open");
+          }
+        });
 
-        window.addEventListener("scroll", updateActiveLink);
-
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-              const offset = 100;
-              const targetPosition =
-                targetElement.getBoundingClientRect().top +
-                window.pageYOffset -
-                offset;
-
-              window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth",
-              });
-            }
-          });
-
-          const icon = link.querySelector("i");
-
-          link.addEventListener("mouseenter", () => {
-            if (icon.classList.contains("bx-food-menu")) {
-              icon.classList.replace("bx-food-menu", "bxs-food-menu");
-            } else if (icon.classList.contains("bxs-cart")) {
-              icon.classList.replace("bxs-cart", "bxs-cart-add");
-            }
-          });
-
-          link.addEventListener("mouseleave", () => {
-            if (icon.classList.contains("bxs-food-menu")) {
-              icon.classList.replace("bxs-food-menu", "bx-food-menu");
-            } else if (icon.classList.contains("bxs-cart-add")) {
-              icon.classList.replace("bxs-cart-add", "bxs-cart");
-            }
-          });
+        link.addEventListener("mouseleave", () => {
+          if (i.classList.contains("bxs-folder-open")){
+            i.classList.replace("bxs-folder-open", "bxs-folder")
+          }
         });
       });
     </script>
   </head>
   <body>
-    <header id="header">
-      <nav id="nav-bar">
-        <a id="logo-link" class="nav-link" href="#main-title">
-          <img
-            id="header-img"
-            src="https://cdn.pixabay.com/photo/2022/01/03/21/54/smart-watch-6913690_1280.png"
-            alt="A smart watch"
-          />
-          <p>Droid<br />Watches</p>
-        </a>
-        <span class="link-wrapper">
-          <a id="features-link" class="nav-link" href="#features">
-            <i class="bx bx-food-menu"></i>
-            <p>Features</p>
-          </a>
-          <a id="cart-link" class="nav-link" href="#form">
-            <i class="bx bxs-cart"></i>
-            <p>Order Now</p>
-          </a>
-        </span>
-      </nav>
-    </header>
-
-    <main>
-      <section>
-        <header>
-          <h1 id="main-title">New Era. New Technologies</h1>
-          <video
-            autoplay
-            loop
-            muted
-            id="video"
-            src="https://assets.mixkit.co/videos/47881/47881-720.mp4"
-            alt="Young fit man checking his smart watch as he runs on the treadmill"
-          ></video>
-          <a
-            id="video-credits"
-            href="https://mixkit.co/free-stock-video/young-fit-man-checking-his-smart-watch-as-he-runs-47881/"
-            target="_blank"
-            >Video By Mixkit</a
-          >
-        </header>
-        <div id="features">
-          <div class="feature-vital">
-            <i class="bx bx-stats"></i>
-            <div class="text-wrapper">
-              <h3>Smart Vital Track</h3>
-              <h4>Track your vitals precisely with no effort</h4>
-              <p>
-                Sleep cycles, BPM, glucose, fat, even heart attack detection!
-              </p>
-            </div>
-          </div>
-          <div class="feature-use">
-            <i class="bx bxs-hand-up"></i>
-            <div class="text-wrapper">
-              <h3>Easy Use</h3>
-              <h4>Easily understandable interface</h4>
-              <p>
-                Most of accessibility is built-in with settings to adjust to
-                your need.
-              </p>
-            </div>
-          </div>
-          <div class="feature-delivery">
-            <i class="bx bx-package"></i>
-            <div class="text-wrapper">
-              <h3>Fast Delivery</h3>
-              <h4>Delivery even in weekends*</h4>
-              <p>30% faster than competition!*</p>
-            </div>
-          </div>
+    <header>
+      <nav id="navbar">
+        <div class="dropdown-container">
+          <i class="bx bx-chevron-right dropdown-icon" id="dropdown-icon"></i>
+          <ul class="dropdown" id="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link active" href="#welcome-screen">
+                <i class="bx bx-home-alt-2"></i>
+                <span>Welcome!</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">
+                <i class="bx bx-briefcase"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bx bx-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
-      <h2 class="form-title">Order now!</h2>
-      <form action="https://www.freecodecamp.com/email-submit" id="form">
-        <input
-          required
-          name="email"
-          type="email"
-          id="email"
-          placeholder="Your email here"
-        />
-        <input id="submit" type="submit" />
-      </form>
-      <p class="form-description">
-        We won't send you newsletters, just your booking.
-      </p>
-    </main>
-
-    <footer>
-      <a class="footer-link" href="terms.html">Terms of Use</a>
-      <a class="footer-link" href="privacy.html">Privacy Policy</a>
-    </footer>
+      </nav>
+      <main>
+        <section id="welcome-screen">
+          <h1>
+            Howdy! I'm
+            <a
+              href="https://github.com/tyxiel"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Tyxiel.</a
+            >
+          </h1>
+          <h2>Front-end & Database Developer</h2>
+        </section>
+        <section id="projects">
+          <h1 class="projects-main-title">Projects! Things made by me</h1>
+          <main>
+            <a
+              href="https://tyxiel.github.io/Simple-Weather-App/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/Qn5cWvc/image.png" alt="A weather app with the most important info"/>
+              <p aria-hidden="true">Simple Weather App</p>
+            </a>
+            <a
+              href="https://gabrielbehling.github.io/Weather-App/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/k93dWR9/image.png" alt="A weather app with almost everything"/>
+              <p aria-hidden="true">Advanced Weather App</p>
+            </a>
+            <a
+              href="https://tyxiel.github.io/appViaCep2/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/s3sYKFz/image.png" alt="A brazilian CEP search app"/>
+              <p aria-hidden="true">Brazilian CEP Search</p>
+            </a>
+            <a
+              href="https://tyxiel.github.io/CNPJSearchApp/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/BZKbf2F/image.png" alt="A brazilian CNPJ search app"/>
+              <p aria-hidden="true">Brazilian CNPJ Search</p>
+            </a>
+            <a
+              href="https://tyxiel.github.io/Product-Landing-Page/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/2hS2brm/image.png" alt="A simple product landing page"/>
+              <p aria-hidden="true">Product Landing Page</p>
+            </a>
+            <a
+              href="https://tyxiel.github.io/Technical-Doc/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://i.ibb.co/2YJPGNS/image.png" alt="A simple golang technical document"/>
+              <p aria-hidden="true">Simple Golang Technical Doc</p>
+            </a>
+          </main>
+          <aside class="projects-aside">
+            <i class="bx bxs-folder"></i>
+            <h1>All repositories</h1>
+          </aside>
+        </section>
+      </main>
+    </header>
   </body>
 </html>
