@@ -36,3 +36,7 @@ Ou acesse a demonstração online: [Droid Watches](http://tyxiel.github.io/Produ
 
 Este projeto satisfaz um dos requisitos da certificação de Responsive Web Design do freeCodeCamp.
 [Certificação Online](https://www.freecodecamp.org/certification/Tyxiel/responsive-web-design)
+
+## Licença
+
+Este projeto é licenciado sob a **GNU Affero General Public License v3.0**.
